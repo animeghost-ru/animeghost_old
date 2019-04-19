@@ -1,4 +1,4 @@
-<? 
+<?
 require($_SERVER['DOCUMENT_ROOT'].'/private/functions.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/mysql.php');
@@ -8,8 +8,8 @@ require($_SERVER['DOCUMENT_ROOT'].'/private/header.php');
 ?>
 <div class="simpleblock">
     <div id="input">
-        <input class="form-control" placeholder="Логин" type="text" required style="margin-bottom: 5px;">
-        <input class="form-control" placeholder="Пароль" type="password" required>
+        <input id="login" class="form-control" placeholder="Логин" type="text" required style="margin-bottom: 5px;">
+        <input id="pass" class="form-control" placeholder="Пароль" type="password" required>
         <input class="btn" type="submit" value="Вход в личный кабинет." login-submit>
     </div>
     <div id="gif" style="display: none;">
