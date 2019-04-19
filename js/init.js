@@ -1,9 +1,9 @@
 $("#chosen").chosen({no_results_text: "Oops, nothing found!"});
 
 $(document).on("click", "[login-submit]", function(e) {
-	$('#input').fadeOut(500);
+	//$('#input').fadeOut(500);
 
-    $('#gif').fadeIn(500);
+    //$('#gif').fadeIn(500);
 	e.preventDefault();
 	mail = $('input[id=login]').val();
 	passwd = $('input[id=pass]').val();

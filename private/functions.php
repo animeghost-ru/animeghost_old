@@ -32,7 +32,7 @@ function login()
 	{
 		_msg('empty', 'error');
 	}
-	$_POST['login'] = mb_strtolower($_POST['mail']);
+	$_POST['login'] = mb_strtolower($_POST['login']);
 	$query = $db->prepare('SELECT `id`, `login`, `pass` FROM `users` WHERE `login` = :login');
 	$query->bindValue(':login', $_POST['login']);
 	$query->execute();
