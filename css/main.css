@@ -1,0 +1,145 @@
+/*@font-face {
+  font-family: 'Roboto Slab';
+  font-style: Regular;
+  font-weight: 400;
+  src: url('/fonts/RobotoSlab-Regular.ttf');
+}
+*/
+body{
+    font-family: 'Roboto Slab', serif;
+    background-color: black;
+}
+
+.logoimg {
+    margin-left: 10%;
+}
+
+.main {
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+.content {
+	width: 1065px;
+	float: left;
+	/*background-color: #D3D3D3;*/
+    margin-right: 10px;
+}
+
+.contentmenu {
+	font-size: 15.6px;
+	height: 50px;
+	/*background-color: #d3d3d3;*/
+	text-align: center;
+   
+}
+
+ul.main-navigation {
+	padding: 0;
+	margin: 0;
+}
+
+ul.main-navigation li {
+	display: block;
+	position: relative;
+	float: left;
+}
+
+ul.main-navigation a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	height: 50px;
+	padding: 14px;
+	font-size: 12.2pt;
+}
+
+a#button0 {
+	background-color: #dbdbdb;
+	width: 100px;
+	border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 1px solid black;
+}
+
+a#button1 {
+	background-color: #dbdbdb;
+	width: 95px;
+  border-right: 1px solid black;
+}
+
+a#button2 {
+	background-color: #dbdbdb;
+	width: 130px;
+  border-right: 1px solid black;
+}
+
+a#button3 {
+	background-color: #dbdbdb;
+	width: 200px;
+  border-right: 1px solid black;
+}
+
+a#button4 {
+	background-color: #dbdbdb;
+	width: 140px;
+  border-right: 1px solid black;
+}
+
+a#button5 {
+	background-color: #dbdbdb;
+	width: 150px;
+  border-right: 1px solid black;
+}
+
+a#button6 {
+	background-color: #dbdbdb;
+	width: 250px;
+	border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+a#button0:hover,a#button1:hover,a#button2:hover,a#button3:hover,a#button4:hover,a#button5:hover{
+  border-right: 1px solid black;
+}
+
+a#button0:hover,a#button1:hover,a#button2:hover,a#button3:hover,a#button4:hover,a#button5:hover,a#button6:hover {
+	background-color: #c1caca;
+}
+
+.simpleblock {
+	overflow: auto;
+	word-wrap: break-word;
+	margin-top: 10px;
+	background-color: #cccccc;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.chosen-container-multi, .default, .chosen-choices {
+    border-radius: 5px;
+}
+
+.search {
+   margin: 5px !important;
+   border-radius: 5px !important;
+   /*border: 1px solid black !important;*/
+}
+
+#searchParams {
+    background-color: #cccccc;
+    padding: 25px 25px;
+	margin-top: 10px;
+	min-height: 150px;
+	border-radius: 5px;
+}
+
+.login {
+    display: block !important;
+    margin: 10px;
+    width: 400px;
+    height: 600px;
+}
+
+.btn {
+    background-color: grey !important;
+}

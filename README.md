@@ -1,1 +1,1 @@
-# animeghost
+# animeghost-ru
