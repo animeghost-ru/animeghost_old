@@ -7,7 +7,7 @@ $(document).on("click", "[login-submit]", function(e) {
 	e.preventDefault();
 	mail = $('input[id=login]').val();
 	passwd = $('input[id=pass]').val();
-	$.post("//"+document.domain+"/public/login.php", { 'mail': mail, 'passwd': passwd}, function(json){
+	$.post("//"+document.domain+"/public/login.php", { 'login': mail, 'pass': passwd}, function(json){
 		data = JSON.parse(json);
 		if(data.err == 'ok'){
 			document.location.href="/";
