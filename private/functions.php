@@ -1,10 +1,10 @@
 <?
 function getGenreList(){
-	global $pdo; $arr = [];
+	global $db; $arr = [];
    $result = '';
-	$tmpl = '<option value="{name}">{name}</option>';
+	 $tmpl = '<option value="{name}">{name}</option>';
    $sql = "SELECT `name` from `genres` ORDER BY `rating` ASC";
-	$query = $pdo->query($sql);
+	$query = $db->query($sql);
 	while($row = $query->fetch()){
 		$arr[] = $row['name'];
 	}

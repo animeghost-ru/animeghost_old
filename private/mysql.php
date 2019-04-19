@@ -6,7 +6,7 @@ $opt = array(
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 );
 
-try { $pdo = new PDO($dsn, $conf['mysql_user'], $conf['mysql_pass'], $opt); }
+try { $db = new PDO($dsn, $conf['mysql_user'], $conf['mysql_pass'], $opt); }
 catch (PDOException $e) {
 	file_put_contents($_SERVER['DOCUMENT_ROOT'].'/private/logs/PDOErrors.txt', $e->getMessage().PHP_EOL, FILE_APPEND);
 	die('MySQL ERROR');
@@ -26,7 +26,7 @@ catch(PDOException $e) {
 */
 
 /*
-$link = mysqli_connect($conf['mysql_host'], $conf['mysql_user'], $conf['mysql_pass'], $conf['mysql_base']) 
-    or die("Îøèáêà " . mysqli_error($link));
+$link = mysqli_connect($conf['mysql_host'], $conf['mysql_user'], $conf['mysql_pass'], $conf['mysql_base'])
+    or die("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " . mysqli_error($link));
 */
 ?>
