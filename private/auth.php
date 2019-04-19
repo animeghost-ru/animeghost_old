@@ -1,4 +1,1 @@
-<?
-$user = false;
-auth();
-?>
+<?$user = false;auth();?>
