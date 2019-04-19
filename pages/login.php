@@ -13,6 +13,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/private/header.php');
         <input id="login" class="form-control" placeholder="Логин" type="text" required style="margin-bottom: 5px;">
         <input id="pass" class="form-control" placeholder="Пароль" type="password" required>
         <input class="btn" type="submit" value="Вход в личный кабинет." login-submit>
+        <p id="loginMes"></p>
     </div>
     <div id="gif" style="display: none;">
         <img src="<? echo $var['siteroot']?>img/35.gif" style="margin-left: 49%;">

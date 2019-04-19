@@ -26,7 +26,7 @@ function login()
 {
 	global $db, $user, $var;
 	if($user){
-		_message('authorized', 'error');
+		_msg('authorized', 'error');
 	}
 	if(empty($_POST['login']) || empty($_POST['pass']))
 	{
@@ -41,7 +41,7 @@ function login()
 		_msg('invalidUser', 'error');
 	}
 	$row = $query->fetch();
-	if(!password_verify($_POST['pass'], $row['pass']))
+	if($_POST['pass'] != $row['pass'])
 	{
 		_msg('wrongPass', 'error');
 	}
