@@ -1,4 +1,9 @@
 <?
+function _msg($key, $err = 'ok'){
+	global $var;
+	die(json_encode(['err' => $err, 'mes' => $var['error'][$key], 'key' => $key]));
+}
+
 function getGenreList()
 {
 	global $db; $arr = [];
@@ -36,7 +41,7 @@ function login()
 		_msg('invalidUser', 'error');
 	}
 	$row = $query->fetch();
-	if(!password_verify($_POST['pass']), $row['pass'])
+	if(!password_verify($_POST['pass'], $row['pass']))
 	{
 		_msg('wrongPass', 'error');
 	}
