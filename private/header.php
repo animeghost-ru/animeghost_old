@@ -1,5 +1,5 @@
 <?
-$var['siteroot'] = "http://animeghost.ru/";
+$var['siteroot'] = "https://animeghost.ru/";
 ?>
 <!DOCTYPE html>
 <html>

@@ -44,22 +44,23 @@ function login()
 	if($_POST['pass'] != $row['pass'])
 	{
 		_msg('wrongPass', 'error');
-	}
+	}else{
 	sessStart($row);
 	_msg('success');
+	}
 }
 
 function sessStart($row)
 {
 	global $db, $var;
 
-	$hash = session_hash($row['login'], $row['pass']);
+	//$hash = session_hash($row['login'], $row['pass']);
 	$query = $db->prepare('INSERT INTO `session` (`uid`, `ip`, `info`) VALUES (:uid, INET6_ATON(:ip), :info)');
 	$query->bindParam(':uid', $row['id']);
 	$query->bindParam(':ip', $var['ip']);
 	$query->bindParam(':info', $var['user_agent']);
 	$query->execute();
-	$_SESSION['sess'] = $hash[0];
+	//$_SESSION['sess'] = $hash[0];
 	$sid = $db->lastInsertId();
 	$query = $db->prepare('UPDATE `users` SET `last_activity` = :time WHERE `id` = :id');
 	$query->bindParam(':time', $var['time']);
