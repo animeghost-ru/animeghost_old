@@ -8,9 +8,14 @@ $var['title'] = 'Личный кабинет';
 $var['page'] = 'lk';
 require($_SERVER['DOCUMENT_ROOT'].'/private/header.php');
 if (!$_SESSION['login']){
-  header ('Location: pages/login.php');
+  echo '<div class="simpleblock"> Вы не авторизованы, перейдите на страницу авторизации! </div>';
 }
 ?>
+<div class="simpleblock">
+
+
+</div>
+
 
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/private/right.php');
