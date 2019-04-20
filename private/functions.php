@@ -153,7 +153,7 @@ function auth()
 			'login' => $row['login'],
 			'regdate' => $row['regdate'],
 			'last_activity' => $row['last_activity']
-		]
+		];
 	}
 }
 
