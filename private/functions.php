@@ -4,6 +4,23 @@ function _msg($key, $err = 'ok'){
 	die(json_encode(['err' => $err, 'mes' => $var['error'][$key], 'key' => $key]));
 }
 
+function genRandStr($length = 10, $mode = 2) {
+	$str = '';
+	$chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	if($mode == 2){
+		$chars .= '~!@#$%^&*()_+-=';
+	}
+	for ($i = 0; $i < $length; $i++) {
+		$str .= $chars[random_int(0 ,strlen($chars)-1)];
+	}
+    return $str;
+}
+
+function half_string_hash($s){
+	global $conf;
+	return hash($conf['hash_algo'], substr($s, round(strlen($s)/2)));
+}
+
 function _exit()
 {
 	global $db, $var;
@@ -157,12 +174,12 @@ function auth()
 	}
 }
 
-function session_hash($login, $passwd, $rand = ''){
+function session_hash($login, $pass, $rand = ''){
 	global $conf, $var;
 	if(empty($rand)){
 		$rand = genRandStr(8);
 	}
-	return [$rand.hash($conf['hash_algo'], $rand.$var['user_agent'].$login.sha1(half_string_hash($passwd))), $var['time']+60*60*24*30];
+	return [$rand.hash($conf['hash_algo'], $rand.$var['user_agent'].$login.sha1(half_string_hash($pass))), $var['time']+60*60*24*30];
 }
 
 ?>
