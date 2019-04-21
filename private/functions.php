@@ -75,11 +75,11 @@ function login()
 function sessStart($row)
 {
 	global $db, $var;
-
-	//$hash = session_hash($row['login'], $row['pass']);
-	$query = $db->prepare('INSERT INTO `session` (`uid`, `hash`, `ip`, `info`) VALUES (:uid, :hash, INET6_ATON(:ip), :info)');
+	$hash = session_hash($row['login'], $row['pass']);
+	$query = $db->prepare('INSERT INTO `session` (`uid`, `hash`, `time`, `ip`, `info`) VALUES (:uid, :hash, :time, INET6_ATON(:ip), :info)');
 	$query->bindParam(':uid', $row['id']);
-	$query->bindParam(':hash', $row['login']);
+	$query->bindParam(':hash', $hash[0]);
+	$query->bindParam(':time', $hash[1]);
 	$query->bindParam(':ip', $var['ip']);
 	$query->bindParam(':info', $var['user_agent']);
 	$query->execute();
@@ -109,7 +109,7 @@ function auth()
 		$query->bindParam(':time', $tmp);
 		$query->execute();
 	}
-	if($_SESSION['login'])
+	if(!empty($_SESSION['login']))
 	{
 		$query = $db->prepare('SELECT `id`, `uid`, `hash` FROM `session` WHERE `hash` = :hash and `time` > :time');
 		$query->bindParam(':hash', $_SESSION['login']);
@@ -155,6 +155,14 @@ function auth()
 			'last_activity' => $row['last_activity']
 		];
 	}
+}
+
+function session_hash($login, $passwd, $rand = ''){
+	global $conf, $var;
+	if(empty($rand)){
+		$rand = genRandStr(8);
+	}
+	return [$rand.hash($conf['hash_algo'], $rand.$var['user_agent'].$login.sha1(half_string_hash($passwd))), $var['time']+60*60*24*30];
 }
 
 ?>

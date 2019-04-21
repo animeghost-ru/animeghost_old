@@ -1,5 +1,11 @@
 <?
 $var['siteroot'] = "https://animeghost.ru/";
+if (!empty($_SESSION['login']))
+{
+  $exit = 'ВЫХОД';
+}else{
+  $exit = 'ВХОД';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,8 +31,8 @@ $var['siteroot'] = "https://animeghost.ru/";
 						<li><a id="button1" href="/pages/anime.php">АНИМЕ</a></li>
 						<li><a id="button2" href="/pages/manga.php">МАНГА</a></li>
 						<li><a id="button3" href="/pages/lk.php">ЛИЧНЫЙ КАБИНЕТ</a></li>
-						<li><a id="button4" href="/pages/login.php">ВХОД</a></li>
+						<li><a id="button4" href="/pages/login.php"><? echo $exit;?></a></li>
 						<li><a id="button5" href="/pages/reg.php">РЕГИСТРАЦИЯ</a></li>
-                  <li><a id="button6" href="/pages/ourteam.php">КОМАНДА ANIMEGHOST</a></li>
+            <li><a id="button6" href="/pages/ourteam.php">КОМАНДА ANIMEGHOST</a></li>
 					</ul>
 				</div>
