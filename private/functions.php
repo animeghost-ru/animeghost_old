@@ -100,7 +100,7 @@ function sessStart($row)
 	$query->bindParam(':ip', $var['ip']);
 	$query->bindParam(':info', $var['user_agent']);
 	$query->execute();
-	$_SESSION['login'] = $row['login'];
+	$_SESSION['login'] = $hash[0];
 	$sid = $db->lastInsertId();
 	$query = $db->prepare('UPDATE `users` SET `last_activity` = :time WHERE `id` = :id');
 	$query->bindParam(':time', $var['time']);
