@@ -126,7 +126,7 @@ function auth()
 		$query->bindParam(':time', $tmp);
 		$query->execute();
 	}
-	if(!empty($_SESSION['login']))
+	if($_SESSION['login'])
 	{
 		$query = $db->prepare('SELECT `id`, `uid`, `hash` FROM `session` WHERE `hash` = :hash and `time` > :time');
 		$query->bindParam(':hash', $_SESSION['login']);
