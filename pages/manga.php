@@ -4,6 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/private/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/mysql.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/settings/var.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/settings/session.php');
+require($_SERVER['DOCUMENT_ROOT'].'/private/auth.php');
 $var['title'] = 'Каталог Манги';
 $var['page'] = 'manga';
 require($_SERVER['DOCUMENT_ROOT'].'/private/header.php');

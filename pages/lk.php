@@ -4,6 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/private/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/mysql.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/settings/var.php');
 require($_SERVER['DOCUMENT_ROOT'].'/private/settings/session.php');
+require($_SERVER['DOCUMENT_ROOT'].'/private/auth.php');
 $var['title'] = 'Личный кабинет';
 $var['page'] = 'lk';
 require($_SERVER['DOCUMENT_ROOT'].'/private/header.php');
@@ -12,7 +13,7 @@ if (!$_SESSION['login']){
 }
 ?>
 <div class="simpleblock">
-
+  <h3>Профиль пользователя <? $user['login']?></h3>
 
 </div>
 
